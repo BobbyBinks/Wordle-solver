@@ -89,7 +89,7 @@ consolidated_list.sort()
 with open('filtered wordle list.txt', 'w') as f:
     for word in consolidated_list:
         f.write(f'{word}\n')
-#
+## To be used after 1st attempt at solving wordle
 #def actual(viable):
 #    shortlist=[]
 #    for k in range (0,len(viable)):
