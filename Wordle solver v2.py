@@ -59,18 +59,6 @@ for input in inputs:
                         filtered=list(dict.fromkeys(filtered))#remove duplicates             
     answers.append(filtered)
 #    
-
-
-#if len(answers) ==1:
-#    print(answers)    
-#else:
-#    result=set(answers[0])
-#    for n in range (0,len(answers)):
-#        result = result & set(answers[n])
-#    result=list(result)
-#    result.sort()
-#print(result)
-#
 def consolidate(*args):
     if len(args) == 1:
         return args[0]
@@ -81,15 +69,14 @@ def consolidate(*args):
 
 consolidated_list = consolidate(*answers)
 consolidated_list.sort()
-#print(consolidated_list)
 with open('filtered wordle list.txt', 'w') as f:
     for word in consolidated_list:
         f.write(f'{word}\n')
-
-def actual(viable):
-    shortlist=[]
-    for k in range (0,len(viable)):
-        if "a" not in viable[k] and "d" not in viable[k] and "m" not in viable[k] and "i" in viable[k][1] and "n" in viable[k][2] and "b" not in viable[k] and "g" not in viable[k] and "e" not in viable[k]:
-            shortlist.append(viable[k])
-    return shortlist
-print(actual(consolidated_list))
+#
+#def actual(viable):
+#    shortlist=[]
+#    for k in range (0,len(viable)):
+#        if "a" not in viable[k] and "d" not in viable[k] and "m" not in viable[k] and "i" in viable[k][1] and "n" in viable[k][2] and "b" not in viable[k] and "g" not in viable[k] and "e" not in viable[k]:
+#            shortlist.append(viable[k])
+#    return shortlist
+#print(actual(consolidated_list))
