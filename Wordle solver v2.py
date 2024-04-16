@@ -4,14 +4,31 @@ from operator import truediv
 f= open ("wordle-nyt-answers-alphabetical.txt", "r")
 output = f.read().splitlines()
 f.close()
-inputs = [
-    ["blank","blank","green","yellow","blank"], #add user input from friend's share submission
-    ["green","blank","yellow","yellow","blank"], #add user input from friend's share submission
-    ["green","green","green","blank","blank"], #add user input from friend's share submission
-    ["blank","green","green","green","blank"], #add user input from friend's share submission
-    ["green","blank","green","blank","blank"] #add user input from friend's share submission
 
-]
+def create_nested_list(num_lists):
+    nested_list = []
+    for _ in range(num_lists):
+        sublist = []
+        print(f"Enter values for list {_ + 1} (blank/yellow/green):")
+        for i in range(5):
+            while True:
+                value = input(f"Enter value {i + 1}: ").strip().lower()
+                if value in ['blank', 'yellow', 'green']:
+                    sublist.append(value)
+                    break
+                else:
+                    print("Invalid input! Please enter 'blank', 'yellow', or 'green'.")
+        nested_list.append(sublist)
+    return nested_list
+
+num_lists = int(input("Enter the number of lists: "))
+nested_list = create_nested_list(num_lists)
+print("Nested List:")
+for i, sublist in enumerate(nested_list):
+    print(f"List {i + 1}: {sublist}")
+
+inputs = nested_list
+
 filtered=[]
 answers=[]
 for input in inputs:
