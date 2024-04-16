@@ -5,11 +5,11 @@ f= open ("wordle-nyt-answers-alphabetical.txt", "r")
 output = f.read().splitlines()
 f.close()
 inputs = [
-    ["blank","blank","green","yellow","blank"],
-    ["green","blank","yellow","yellow","blank"],
-    ["green","green","green","blank","blank"],
-    ["blank","green","green","green","blank"],
-    ["green","blank","green","blank","blank"]
+    ["blank","blank","green","yellow","blank"], #add user input from friend's share submission
+    ["green","blank","yellow","yellow","blank"], #add user input from friend's share submission
+    ["green","green","green","blank","blank"], #add user input from friend's share submission
+    ["blank","green","green","green","blank"], #add user input from friend's share submission
+    ["green","blank","green","blank","blank"] #add user input from friend's share submission
 
 ]
 filtered=[]
